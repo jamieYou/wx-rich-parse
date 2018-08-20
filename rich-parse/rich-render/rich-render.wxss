@@ -141,7 +141,7 @@ view {
   overflow: hidden;
   display: block;
   max-width: 100%;
-  vertical-align: top;
+  width: auto;
 }
 .rich-parse-blockquote {
   margin: 0;

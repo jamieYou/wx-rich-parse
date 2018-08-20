@@ -1,4 +1,4 @@
 <!-- 循环模版 -->
 <block wx:for="{{ item.nodes }}" wx:for-item="child" wx:key="{{ index }}">
-  <rich-render item="{{ child }}" images="{{ images }}"/>
+  <rich-render item="{{ child }}" parse_id="{{ parse_id }}"/>
 </block>

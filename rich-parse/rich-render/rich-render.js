@@ -7,15 +7,20 @@ Component({
     images: {
       type: Array,
       value: [],
+    },
+    parse_id: {
+      type: String,
+      value: '',
     }
   },
 
   methods: {
     onImgTap(e) {
-      wx.previewImage({
-        current: e.target.dataset.src, // 当前显示图片的http链接
-        urls: this.data.images, // 需要预览的图片http链接列表
-      })
-    }
+      global.richParses[this.data.parse_id].onImgTap(e)
+    },
+
+    onLinkTap(e) {
+      global.richParses[this.data.parse_id].onLinkTap(e)
+    },
   }
 })

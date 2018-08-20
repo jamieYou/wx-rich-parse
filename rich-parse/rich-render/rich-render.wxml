@@ -22,12 +22,12 @@
 
   <!--video类型-->
   <block wx:elif="{{ item.tag == 'video' }}">
-    <template is="rich-video" data="{{ item, images }}"/>
+    <template is="rich-video" data="{{ item }}"/>
   </block>
 
   <!--audio类型-->
   <block wx:elif="{{ item.tag == 'audio' }}">
-    <template is="rich-audio" data="{{ item, images }}"/>
+    <template is="rich-audio" data="{{ item }}"/>
   </block>
 
   <!--img类型-->
@@ -39,7 +39,7 @@
   <block wx:elif="{{ item.tag == 'a' }}">
     <view
       class="rich-parse-inline {{ item.classStr }} rich-parse-{{ item.tag }}"
-      data-src="{{ item.attr.href }}"
+      data-href="{{ item.attr.href }}" bind:tap="onLinkTap"
       style="{{ item.styleStr }}"
     >
       <include src="render-children.wxml"/>
@@ -101,8 +101,9 @@
 <template name="rich-img">
   <image-loader src="{{ item.attr.src }}">
     <image
-      class="{{ item.classStr }} rich-parse-{{ item.tag }}" src="{{ item.attr.src }}"
-      data-src="{{ item.attr.src }}" mode="widthFix" bindtap="onImgTap"
+      class="{{ item.classStr }} rich-parse-{{ item.tag }}"
+      src="{{ item.attr.src }}" data-src="{{ item.attr.src }}" style="{{ item.styleStr }}"
+      bind:tap="onImgTap" mode="widthFix"
     />
   </image-loader>
 </template>

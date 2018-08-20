@@ -9,16 +9,17 @@
 
 ## 特性
 
-| 支持特性        | ToDo  |
-| ------------- | -----|
-| - [x] HTML的大部分标签解析 |[x] table标签 |
-| - [x] 内联style          | [x] 小表情emjio |
-| - [x] 标签Class          | [x] a标签跳转 |
-| - [x] 图片自适应规则       |                |
-| - [x] 图片多图片预览       |               |
-| - [x] 模版层级可扩展性     |               |
-| - [x] 多数据循环方式       |               |
-| - [x] 内联style          |   |
+| 支持特性        |
+| ------------- |
+| - [x] HTML的大部分标签解析 |
+| - [x] 内联style          |
+| - [x] 标签Class          |
+| - [x] 图片自适应规则       |
+| - [x] 图片多图片预览       |
+| - [x] 模版层级可扩展性     |
+| - [x] 多数据循环方式       |
+| - [x] 内联style          |
+| - [x] a标签跳转           |
 
 ## 基本使用方法
 
@@ -39,6 +40,11 @@
 ```
 <rich-parse content="{{ content }}" type="html"/>
 // content 是字符串内容，type 默认 html，可选 md。
+```
+
+4. a 标签使用
+```
+<rich-parse content="{{ content }}" type="html" bind:linkTo="onLinkTo"/>
 ```
 
 ## 相关文章
