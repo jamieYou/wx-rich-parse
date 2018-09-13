@@ -32,7 +32,7 @@
 
   <!--img类型-->
   <block wx:elif="{{ item.tag == 'img' }}">
-    <template is="rich-img" data="{{ item }}"/>
+    <template is="rich-img" data="{{ item, imageWidths }}"/>
   </block>
 
   <!--a类型-->
@@ -102,8 +102,8 @@
   <image-loader src="{{ item.attr.src }}">
     <image
       class="{{ item.classStr }} rich-parse-{{ item.tag }}"
-      src="{{ item.attr.src }}" data-src="{{ item.attr.src }}" style="{{ item.styleStr }}"
-      bind:tap="onImgTap" mode="widthFix"
+      src="{{ item.attr.src }}" data-src="{{ item.attr.src }}" style="width: {{ imageWidths[item.attr.src] }}; {{ item.styleStr }}"
+      bind:tap="onImgTap" mode="widthFix" bindload="onImgLoad"
     />
   </image-loader>
 </template>

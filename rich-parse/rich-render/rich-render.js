@@ -14,6 +14,10 @@ Component({
     }
   },
 
+  data: {
+    imageWidths: {}
+  },
+
   methods: {
     onImgTap(e) {
       global.richParses[this.data.parse_id].onImgTap(e)
@@ -22,5 +26,10 @@ Component({
     onLinkTap(e) {
       global.richParses[this.data.parse_id].onLinkTap(e)
     },
+
+    onImgLoad(e) {
+      this.data.imageWidths[e.target.dataset.src] = e.detail.width + 'px'
+      this.setData({ imageWidths: this.data.imageWidths })
+    }
   }
 })
