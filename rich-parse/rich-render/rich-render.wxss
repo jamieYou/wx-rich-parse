@@ -139,7 +139,6 @@ view {
 }
 .rich-parse-img {
   overflow: hidden;
-  display: block;
   max-width: 100%;
 }
 .rich-parse-blockquote {
@@ -243,9 +242,9 @@ view {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  border-right: 2rpx solid #e0e0e0;
-  border-bottom: 2rpx solid #e0e0e0;
-  border-top: 2rpx solid #e0e0e0;
+  border-right: 1PX solid #e0e0e0;
+  border-bottom: 1PX solid #e0e0e0;
+  border-top: 1PX solid #e0e0e0;
 }
 .rich-parse-th,
 .rich-parse-td {
@@ -253,15 +252,15 @@ view {
   -webkit-flex: 1;
           flex: 1;
   padding: 10rpx;
-  border-left: 2rpx solid #e0e0e0;
+  border-left: 1PX solid #e0e0e0;
   word-break: break-all;
 }
 .rich-parse-td:last-child {
-  border-top: 2rpx solid #e0e0e0;
+  border-top: 1PX solid #e0e0e0;
 }
 .rich-parse-th {
   background: #f0f0f0;
-  border-top: 2rpx solid #e0e0e0;
+  border-top: 1PX solid #e0e0e0;
 }
 .rich-parse-del {
   display: inline;

@@ -4,6 +4,10 @@ import { html2json } from './helper/html2json.js'
 global.richParses = {}
 
 Component({
+  options: {
+    addGlobalClass: true,
+  },
+
   properties: {
     content: {
       type: String,
