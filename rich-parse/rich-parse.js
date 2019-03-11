@@ -1,5 +1,4 @@
-import showdown from './helper/showdown.js'
-import { html2json } from './helper/html2json.js'
+const { html2json } = require('./helper/html2json')
 
 global.richParses = {}
 
@@ -19,7 +18,11 @@ Component({
     type: {
       type: String,
       value: 'html',
-    }
+    },
+    preview: {
+      type: Boolean,
+      value: true,
+    },
   },
 
   data: {
@@ -35,6 +38,7 @@ Component({
 
   ready() {
     this.parse(this.data.content)
+    global.tt = this
   },
 
   detached() {
@@ -42,26 +46,28 @@ Component({
   },
 
   methods: {
-    parse(content) {
+    parse(content, cb) {
       const { type } = this.data
       if (type === 'md' || type === 'markdown') {
-        const converter = new showdown.Converter()
-        content = converter.makeHtml(content)
+        const { md2html = v => v } = global
+        content = md2html(content)
       }
       const transData = html2json(content, 'rich')
-      this.setData({ rich: transData })
+      this.setData({ rich: transData }, cb)
     },
 
     onImgTap(e) {
-      wx.previewImage({
+      const detail = {
         current: e.target.dataset.src, // 当前显示图片的http链接
         urls: this.data.rich.imageUrls, // 需要预览的图片http链接列表
-      })
+      }
+      this.triggerEvent('imgTap', detail, {})
+      this.data.preview && wx.previewImage(detail)
     },
 
     onLinkTap(e) {
       const { href } = e.currentTarget.dataset
-      this.triggerEvent('linkTo', { href })
+      this.triggerEvent('linkTo', { href }, {})
     }
   }
 })

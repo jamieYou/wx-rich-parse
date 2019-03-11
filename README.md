@@ -40,11 +40,17 @@
 ```
 <rich-parse content="{{ content }}" type="html"/>
 // content 是字符串内容，type 默认 html，可选 md。
+// md 解析器需要手动配置，函数挂在 global.md2html 上才有效
 ```
 
 4. a 标签使用
 ```
 <rich-parse content="{{ content }}" type="html" bind:linkTo="onLinkTo"/>
+```
+
+5. 图片预览
+```
+<rich-parse preview="true 默认为 true" bind:imgTap="图片点击事件"/>
 ```
 
 ## 相关文章

@@ -1,0 +1,2 @@
+<!-- 循环模版 -->
+<render-nodes nodes="{{ item.nodes }}" parse_id="{{ parse_id }}"/>

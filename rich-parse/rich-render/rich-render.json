@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "rich-render": "./rich-render",
-    "image-loader": "../image-loader/image-loader"
-  }
-}

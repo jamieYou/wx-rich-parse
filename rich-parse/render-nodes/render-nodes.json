@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "render-nodes": "./render-nodes/render-nodes"
+    "render-nodes": "./render-nodes"
   }
 }

@@ -4,11 +4,7 @@ Component({
   },
 
   properties: {
-    item: {
-      type: Object,
-      value: {},
-    },
-    images: {
+    nodes: {
       type: Array,
       value: [],
     },
