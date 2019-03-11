@@ -1,0 +1,15 @@
+{
+  "name": "wx-rich-parse",
+  "version": "1.0.0",
+  "description": "微信小程序富文本解析组件",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamieYou/wx-rich-parse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamieYou/wx-rich-parse/issues"
+  },
+  "homepage": "https://github.com/jamieYou/wx-rich-parse#readme"
+}
